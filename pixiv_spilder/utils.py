@@ -1,3 +1,6 @@
+import random
+import datetime
+
 useAgents = [
 	"Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A366 MicroMessenger/6.7.3(0x16070321) NetType/WIFI Language/zh_CN",
 	"Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A366 MicroMessenger/6.7.3(0x16070321) NetType/WIFI Language/zh_CN",
@@ -10,9 +13,18 @@ useAgents = [
 	"Mozilla/5.0 (Linux; Android 5.1.1; vivo X6S A Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/044207 Mobile Safari/537.36 MicroMessenger/6.7.3.1340(0x26070332) NetType/4G Language/zh_CN Process/tools",
 	"Mozilla/5.0 (Linux; Android 7.1.1; vivo X20A Build/NMF26X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/044304 Mobile Safari/537.36 MicroMessenger/6.7.2.1340(0x2607023A) NetType/WIFI Language/zh_CN"
 ]
-import random
 
 def getUserAget():
 	index = random.randint(0, len(useAgents) - 1)
 	return useAgents[index]
+pass
+
+# 获取前几天日期
+def getBeforeDate(beforeOfDay):
+  today = datetime.datetime.now()
+  # 计算偏移量
+  offset = datetime.timedelta(days=-beforeOfDay)
+  # 获取想要的日期的时间
+  re_date = (today + offset).strftime('%Y-%m-%d')
+  return re_date
 pass

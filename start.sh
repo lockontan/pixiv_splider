@@ -1,0 +1,1 @@
+cd /var/www/pixiv_spilder && nohup python -u run.py >> nohup`date +%Y-%m-%d`.log 2>&1 &
